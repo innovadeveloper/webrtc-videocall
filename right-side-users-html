@@ -1,0 +1,117 @@
+
+      <!-- Right Side -->
+      <div class="right-side">
+        <button class="btn-close-right">
+          <!-- Close Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            class="feather feather-x-circle"
+            viewBox="0 0 24 24"
+          >
+            <defs></defs>
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M15 9l-6 6M9 9l6 6"></path>
+          </svg>
+          <!-- Close Icon -->
+        </button>
+        <div class="chat-container">
+          <div class="chat-header">
+            <button class="chat-header-button">Live Chat</button>
+          </div>
+          <div class="chat-area">
+            <!-- Message 1 -->
+            <div class="message-wrapper">
+              <div class="profile-picture">
+                <img
+                  src="https://images.unsplash.com/photo-1581824283135-0666cf353f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1276&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="message-content">
+                <p class="name">Kane Baltazar</p>
+                <div class="message">Saludos xdddd!😍</div>
+              </div>
+            </div>
+            <!-- Message 1 -->
+            <div class="message-wrapper">
+              <div class="profile-picture">
+                <img
+                  src="https://images.unsplash.com/photo-1581824283135-0666cf353f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1276&q=80"
+                  alt=""
+                />
+              </div>
+              <div class="message-content">
+                <p class="name">Kane Baltazar</p>
+                <div class="message">Saludos xddddxddddx<br>ddddxddddxddddxd<br>dddxddddxddddxddddxdddxddddxddddx<br>ddddx!😍</div>
+              </div>
+            </div>
+          </div>
+          <div class="chat-typing-area-wrapper">
+            <div class="chat-typing-area">
+              <input
+                type="text"
+                placeholder="Type your message..."
+                class="chat-input"
+              />
+              <button class="send-button">
+                <!-- Send icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-send"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" />
+                </svg>
+                <!-- Send icon -->
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="participants">
+          <!-- Participant pic 1 -->
+          <div class="participant profile-picture">
+            <img
+              src="https://images.unsplash.com/photo-1576110397661-64a019d88a98?ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80"
+              alt=""
+            />
+          </div>
+          <!-- Participant pic 2 -->
+          <div class="participant profile-picture">
+            <img
+              src="https://images.unsplash.com/photo-1566821582776-92b13ab46bb4?ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+              alt=""
+            />
+          </div>
+          <!-- Participant pic 3 -->
+          <div class="participant profile-picture">
+            <img
+              src="https://images.unsplash.com/photo-1600207438283-a5de6d9df13e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80"
+              alt=""
+            />
+          </div>
+          <!-- Participant pic 4 -->
+          <div class="participant profile-picture">
+            <img
+              src="https://images.unsplash.com/photo-1581824283135-0666cf353f35?ixlib=rb-1.2.1&auto=format&fit=crop&w=1276&q=80"
+              alt=""
+            />
+          </div>
+          <div class="participant-more">KB</div>
+          <div class="participant-more">2+</div>
+          <div class="participant-more">2+</div>
+          <div class="participant-more">2+</div>
+          <div class="participant-more">2+</div>
+        </div>
+      </div>
