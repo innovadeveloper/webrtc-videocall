@@ -11,7 +11,8 @@ var server_port = process.env.PORT || '8080';
 var app = http.createServer(function(req, res) {
   fileServer.serve(req, res);
 }).listen(server_port);
-console.log('Running in ' + server_port);
+console.log('Running in http://localhost:' + server_port + '/index.html');
+console.log('VideoCall in in http://localhost:' + server_port + '/home.html');
 
 var io = socketIO(app);
 io.on('connection', function(socket) {
@@ -54,19 +55,4 @@ io.on('connection', function(socket) {
       socket.emit('full', room);
     }
   });
-
-  // socket.on('ipaddr', function() {
-  //   console.log("ipaddr -> called")
-  //   var ifaces = os.networkInterfaces();
-  //   console.log(ifaces)
-  //   for (var dev in ifaces) {
-  //     ifaces[dev].forEach(function(details) {
-  //       console.log(detalis.address);
-  //       if (details.family === 'IPv4' && details.address !== '127.0.0.1') {
-  //         socket.emit('ipaddr', details.address);
-  //       }
-  //     });
-  //   }
-  // });
-
 });

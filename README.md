@@ -1,7 +1,73 @@
-# Video Call App UI
-Learn How To Make Video Meeting Website Design using HTML and CSS and JAVASCRIPT | Create Video Call Website Front-end using HTML and CSS Step by Step
+# Videocall app with WebRTC
 
-## YouTube Tutorial: https://youtu.be/vqnALDy9rNc
+This code is an improvement from the codelab [Realtime communication with WebRTC](https://codelabs.developers.google.com/codelabs/webrtc-web/#0).
 
-![image](https://user-images.githubusercontent.com/32398454/209532969-8be7b4cf-01d0-4457-97b8-aed5435c168d.png)
-![image](https://user-images.githubusercontent.com/32398454/209533003-46dd2aff-185b-4479-ba44-3453b2376517.png)
+
+## What I've learnt
+* Get video from your webcam
+* Stream video with RTCPeerConnection
+* Set up a signaling service to exchange messages
+* Combine peer connection and signaling
+
+
+# Node stuff
+## Download node_modules dependencies
+```
+npm install
+```
+
+## Run node server
+```
+node index.js
+```
+
+Open http://localhost:8080 in two Chrome tabs and tatachan!
+
+If you want to test it in your same wifi go to chrome://flags/#unsafely-treat-insecure-origin-as-secure
+and add your local ip:port (ex: http://192.168.1.106:8080)
+Now you can open http://<your_local_ip>:8080 in two Chrome tabs and tatachan!
+
+# Docker stuff
+## Make your docker image
+```
+docker build -t webrtc-server .
+```
+
+## View your docker images
+```
+docker images
+```
+
+## Run your docker image in a container
+```
+docker run --name webrtc-server --rm --init -p 8080:8080 webrtc-server
+ctrl-c to close
+```
+
+## View your docker containers
+```
+docker ps -a
+```
+
+## Remove your old docker images and containers not used
+```
+docker system prune
+```
+
+# Heroku stuff
+## Login
+```
+heroku login
+heroku container:login
+```
+
+## Create docker image and deploy it
+```
+heroku container:push web -a webrtcsrv
+heroku container:release web -a webrtcsrv
+```
+
+## View logs
+```
+heroku logs --tail -a webrtcsrv
+```
