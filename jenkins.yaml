@@ -1,51 +1,51 @@
 credentials:
   system:
     domainCredentials:
-    - credentials:
-      - gitLabApiTokenImpl:
-          apiToken: "{AQAAABAAAABQqsiWHrjp/MluEqneispjE1Cm3aKvN5tuJSO0rnv8/JnEqhVoz4jNzwQwrpbngtzgxARXg4pgc1FAJGv48ns9F4ITqOPEMRzA3iwam0mbYFCDU0nv4siGtvYod9wpZaC5}"
-          description: "Personal Access Tokens for Gitlab Abexa ONPREMISE"
-          id: "gitlababexa-jrafael"
-          scope: GLOBAL
-      - usernamePassword:
-          description: "User for Server 17 for Agent"
-          id: "server17-username"
-          password: "{AQAAABAAAAAQBLfNCCMoQ4uyjzZJtMbuTR4nK7QezQ3Y0AzxJjlNSk0=}"
-          scope: GLOBAL
-          username: "jenkins-agent"
-      - gitLabApiTokenImpl:
-          apiToken: "{AQAAABAAAABQMlHw/PruZaubG/3HqQB8Uwnv3S3f3vAl3Amjkw5fYwUyv7CbdOLeT3QNH69Kp/L7YyHjrw4GrIFEsweW2h4s+jG7GVN/bvu+cNfgIiaeZ/RLLCmSF1PToxjjUU7lJeld}"
-          description: "Access Token for Gitlab Abexa"
-          id: "gitlab-abexaabx"
-          scope: GLOBAL
-      - usernamePassword:
-          id: "Gitlab-Username-Abexa"
-          password: "{AQAAABAAAAAgWx4zHR7i2dIa1hjYxgHldfWv+5TZhKqppO740NL5r10mLsBbu4/4UNfW0RQmlnSF}"
-          scope: GLOBAL
-          username: "abexa.abx"
-      - usernamePassword:
-          description: "Credentials for Docker Registry"
-          id: "docker_credentials_id"
-          password: "{AQAAABAAAAAQzugZyZlJL8/h4tP2OvcfamgUSIxI5S2z4o12WLLyo/Q=}"
-          scope: GLOBAL
-          username: "admin"
-      - usernamePassword:
-          description: "Usuario del servidor 16 Huandoy para jenkins"
-          id: "jenkins-agent-ubuntu-user"
-          password: "{AQAAABAAAAAQUr3bs0011OEKGCRgdphVQNtv0GWKIzRdUO5SgcOg7Xo=}"
-          scope: GLOBAL
-          username: "jenkins"
-      - usernamePassword:
-          id: "abexa_gitlab_account_kane"
-          password: "{AQAAABAAAAAQdynpBvtqiGG4dmglgZbcBbJSZS347yzcIR+e1D3I/7U=}"
-          scope: GLOBAL
-          username: "kbaltazar.abx@gmail.com"
-      - usernamePassword:
-          description: "User GitLab Abexa"
-          id: "gitlababexa_account_abexa"
-          password: "{AQAAABAAAAAQqVCX2EWgNhh6Ze7lwADMYL5IFOVpmyOZYKOjoqQXCnE=}"
-          scope: GLOBAL
-          username: "abexa"
+      - credentials:
+          - gitLabApiTokenImpl:
+              apiToken: "{AQAAABAAAABQqsiWHrjp/MluEqneispjE1Cm3aKvN5tuJSO0rnv8/JnEqhVoz4jNzwQwrpbngtzgxARXg4pgc1FAJGv48ns9F4ITqOPEMRzA3iwam0mbYFCDU0nv4siGtvYod9wpZaC5}"
+              description: "Personal Access Tokens for Gitlab Abexa ONPREMISE"
+              id: "gitlababexa-jrafael"
+              scope: GLOBAL
+          - usernamePassword:
+              description: "User for Server 17 for Agent"
+              id: "server17-username"
+              password: "{AQAAABAAAAAQBLfNCCMoQ4uyjzZJtMbuTR4nK7QezQ3Y0AzxJjlNSk0=}"
+              scope: GLOBAL
+              username: "jenkins-agent"
+          - gitLabApiTokenImpl:
+              apiToken: "{AQAAABAAAABQMlHw/PruZaubG/3HqQB8Uwnv3S3f3vAl3Amjkw5fYwUyv7CbdOLeT3QNH69Kp/L7YyHjrw4GrIFEsweW2h4s+jG7GVN/bvu+cNfgIiaeZ/RLLCmSF1PToxjjUU7lJeld}"
+              description: "Access Token for Gitlab Abexa"
+              id: "gitlab-abexaabx"
+              scope: GLOBAL
+          - usernamePassword:
+              id: "Gitlab-Username-Abexa"
+              password: "{AQAAABAAAAAgWx4zHR7i2dIa1hjYxgHldfWv+5TZhKqppO740NL5r10mLsBbu4/4UNfW0RQmlnSF}"
+              scope: GLOBAL
+              username: "abexa.abx"
+          - usernamePassword:
+              description: "Credentials for Docker Registry"
+              id: "docker_credentials_id"
+              password: "{AQAAABAAAAAQzugZyZlJL8/h4tP2OvcfamgUSIxI5S2z4o12WLLyo/Q=}"
+              scope: GLOBAL
+              username: "admin"
+          - usernamePassword:
+              description: "Usuario del servidor 16 Huandoy para jenkins"
+              id: "jenkins-agent-ubuntu-user"
+              password: "{AQAAABAAAAAQUr3bs0011OEKGCRgdphVQNtv0GWKIzRdUO5SgcOg7Xo=}"
+              scope: GLOBAL
+              username: "jenkins"
+          - usernamePassword:
+              id: "abexa_gitlab_account_kane"
+              password: "{AQAAABAAAAAQdynpBvtqiGG4dmglgZbcBbJSZS347yzcIR+e1D3I/7U=}"
+              scope: GLOBAL
+              username: "kbaltazar.abx@gmail.com"
+          - usernamePassword:
+              description: "User GitLab Abexa"
+              id: "gitlababexa_account_abexa"
+              password: "{AQAAABAAAAAQqVCX2EWgNhh6Ze7lwADMYL5IFOVpmyOZYKOjoqQXCnE=}"
+              scope: GLOBAL
+              username: "abexa"
 jenkins:
   agentProtocols:
   - "JNLP4-connect"
