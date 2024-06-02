@@ -48,8 +48,8 @@ credentials:
               username: "abexa"
 jenkins:
   agentProtocols:
-  - "JNLP4-connect"
-  - "Ping"
+    - "JNLP4-connect"
+    - "Ping"
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
@@ -58,17 +58,17 @@ jenkins:
       excludeClientIPFromCrumb: false
   disableRememberMe: false
   disabledAdministrativeMonitors:
-  - "hudson.util.DoubleLaunchChecker"
-  - "hudson.diagnosis.ReverseProxySetupMonitor"
+    - "hudson.util.DoubleLaunchChecker"
+    - "hudson.diagnosis.ReverseProxySetupMonitor"
   globalNodeProperties:
   - envVars:
       env:
-      - key: "ANDROID_SDK_ROOT"
-        value: "/mnt/sdc2/andorid-sdk2/sdk"
+        - key: "ANDROID_SDK_ROOT"
+          value: "/mnt/sdc2/andorid-sdk2/sdk"
   labelAtoms:
-  - name: "built-in"
-  - name: "ubuntu-agent-prod"
-  - name: "ubuntu-dev"
+    - name: "built-in"
+    - name: "ubuntu-agent-prod"
+    - name: "ubuntu-dev"
   markupFormatter: "plainText"
   mode: NORMAL
   myViewsTabBar: "standard"
@@ -98,37 +98,37 @@ jenkins:
       at io.jenkins.plugins.casc.Attribute.describe(Attribute.java:257)
       at io.jenkins.plugins.casc.Configurator.describe(Configurator.java:183)
   nodes:
-  - permanent:
-      labelString: "ubuntu-agent-prod"
-      launcher:
-        ssh:
-          credentialsId: "jenkins-agent-ubuntu-user"
-          host: "serverapp01.abexacloud.com"
-          port: 10950
-          sshHostKeyVerificationStrategy:
-            manuallyTrustedKeyVerificationStrategy:
-              requireInitialManualTrust: true
-      mode: EXCLUSIVE
-      name: "ubuntu-agent-prod"
-      numExecutors: 5
-      remoteFS: "/home/jenkins"
-      retentionStrategy: "always"
-  - permanent:
-      labelString: "ubuntu-dev"
-      launcher:
-        ssh:
-          credentialsId: "server17-username"
-          host: "192.168.1.17"
-          port: 22
-          sshHostKeyVerificationStrategy:
-            manuallyTrustedKeyVerificationStrategy:
-              requireInitialManualTrust: true
-          tcpNoDelay: false
-          workDir: "/home/jenkins-agent"
-      name: "ubuntu-dev"
-      numExecutors: 5
-      remoteFS: "/home/jenkins-agent"
-      retentionStrategy: "always"
+    - permanent:
+        labelString: "ubuntu-agent-prod"
+        launcher:
+          ssh:
+            credentialsId: "jenkins-agent-ubuntu-user"
+            host: "serverapp01.abexacloud.com"
+            port: 10950
+            sshHostKeyVerificationStrategy:
+              manuallyTrustedKeyVerificationStrategy:
+                requireInitialManualTrust: true
+        mode: EXCLUSIVE
+        name: "ubuntu-agent-prod"
+        numExecutors: 5
+        remoteFS: "/home/jenkins"
+        retentionStrategy: "always"
+    - permanent:
+        labelString: "ubuntu-dev"
+        launcher:
+          ssh:
+            credentialsId: "server17-username"
+            host: "192.168.1.17"
+            port: 22
+            sshHostKeyVerificationStrategy:
+              manuallyTrustedKeyVerificationStrategy:
+                requireInitialManualTrust: true
+            tcpNoDelay: false
+            workDir: "/home/jenkins-agent"
+        name: "ubuntu-dev"
+        numExecutors: 5
+        remoteFS: "/home/jenkins-agent"
+        retentionStrategy: "always"
   numExecutors: 5
   primaryView:
     all:
@@ -143,26 +143,26 @@ jenkins:
       allowsSignup: false
       enableCaptcha: false
       users:
-      - id: "admin"
-        name: "admin"
-        properties:
-        - "myView"
-        - preferredProvider:
-            providerId: "default"
-        - "theme"
-        - "timezone"
-        - "experimentalFlags"
-        - mailer:
-            emailAddress: "jrafael.abx@gmail.com"
-        - "apiToken"
+        - id: "admin"
+          name: "admin"
+          properties:
+            - "myView"
+            - preferredProvider:
+                providerId: "default"
+            - "theme"
+            - "timezone"
+            - "experimentalFlags"
+            - mailer:
+                emailAddress: "jrafael.abx@gmail.com"
+            - "apiToken"
   slaveAgentPort: 20003
   updateCenter:
     sites:
-    - id: "default"
-      url: "https://updates.jenkins.io/update-center.json"
+      - id: "default"
+        url: "https://updates.jenkins.io/update-center.json"
   views:
-  - all:
-      name: "all"
+    - all:
+        name: "all"
   viewsTabBar: "standard"
 globalCredentialsConfiguration:
   configuration:
@@ -183,11 +183,11 @@ security:
     sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
   scriptApproval:
     approvedScriptHashes:
-    - "SHA512:3f205299bef2fe3329258a42f2c60d332cc35ccb41a3ca0512d7869c6aff4561ff708c48123b4f7c3dec33ccca30d54fb8b9b51b5bc7070f96236d11a3f0bdcb"
+      - "SHA512:3f205299bef2fe3329258a42f2c60d332cc35ccb41a3ca0512d7869c6aff4561ff708c48123b4f7c3dec33ccca30d54fb8b9b51b5bc7070f96236d11a3f0bdcb"
 unclassified:
   buildDiscarders:
     configuredBuildDiscarders:
-    - "jobBuildDiscarder"
+      - "jobBuildDiscarder"
   buildStepOperation:
     enabled: false
   email-ext:
@@ -202,7 +202,7 @@ unclassified:
     defaultContentType: "text/plain"
     defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
     defaultTriggerIds:
-    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+      - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
     maxAttachmentSize: -1
     maxAttachmentSizeMb: -1
     precedenceBulk: false
@@ -221,38 +221,38 @@ unclassified:
     hookUrl: "https://jenkinsdev-service.abexa.pe/github-webhook/"
   gitLabConnectionConfig:
     connections:
-    - apiTokenId: "gitlababexa-jrafael"
-      clientBuilderId: "autodetect"
-      connectionTimeout: 10
-      ignoreCertificateErrors: false
-      name: "gitlababexa-connect"
-      readTimeout: 10
-      url: "https://gitlab.abexa.pe/"
-    - apiTokenId: "gitlab-abexaabx"
-      clientBuilderId: "autodetect"
-      connectionTimeout: 10
-      ignoreCertificateErrors: false
-      name: "Gitlab Abexa Account"
-      readTimeout: 10
-      url: "https://gitlab.com/"
+      - apiTokenId: "gitlababexa-jrafael"
+        clientBuilderId: "autodetect"
+        connectionTimeout: 10
+        ignoreCertificateErrors: false
+        name: "gitlababexa-connect"
+        readTimeout: 10
+        url: "https://gitlab.abexa.pe/"
+      - apiTokenId: "gitlab-abexaabx"
+        clientBuilderId: "autodetect"
+        connectionTimeout: 10
+        ignoreCertificateErrors: false
+        name: "Gitlab Abexa Account"
+        readTimeout: 10
+        url: "https://gitlab.com/"
     useAuthenticatedEndpoint: true
   globalLibraries:
     libraries:
-    - defaultVersion: "master"
-      name: "JenkinsSharedLibraryOfficial"
-      retriever:
-        modernSCM:
-          libraryPath: "./"
-          scm:
-            git:
-              credentialsId: "Gitlab-Username-Abexa"
-              id: "cc269c2c-e2fa-40ee-845e-803397ce328e"
-              remote: "https://gitlab.com/abexa-api/jenkins-shared-library-api.git"
-              traits:
-              - "gitBranchDiscovery"
+      - defaultVersion: "master"
+        name: "JenkinsSharedLibraryOfficial"
+        retriever:
+          modernSCM:
+            libraryPath: "./"
+            scm:
+              git:
+                credentialsId: "Gitlab-Username-Abexa"
+                id: "cc269c2c-e2fa-40ee-845e-803397ce328e"
+                remote: "https://gitlab.com/abexa-api/jenkins-shared-library-api.git"
+                traits:
+                  - "gitBranchDiscovery"
   globalTimeOutConfiguration:
     operations:
-    - "abortOperation"
+      - "abortOperation"
     overwriteable: false
   injectionConfig:
     allowUntrusted: false
@@ -292,26 +292,26 @@ unclassified:
 tool:
   git:
     installations:
-    - home: "git"
-      name: "Default"
+      - home: "git"
+        name: "Default"
   gradle:
     installations:
-    - home: "/opt/gradle/gradle-7.2"
-      name: "gradle_7_2"
+      - home: "/opt/gradle/gradle-7.2"
+        name: "gradle_7_2"
   jdk:
     installations:
-    - home: "/usr/lib/jvm/java-1.8.0-openjdk-amd64"
-      name: "jdk_1_8_0"
-    - home: "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
-      name: "jdk_1_11_0"
-    - home: "/usr/lib/jvm/java-1.17.0-openjdk-amd64"
-      name: "jdk_1_17_0"
+      - home: "/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+        name: "jdk_1_8_0"
+      - home: "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
+        name: "jdk_1_11_0"
+      - home: "/usr/lib/jvm/java-1.17.0-openjdk-amd64"
+        name: "jdk_1_17_0"
   maven:
     installations:
-    - home: "/opt/maven/apache-maven-3.9.4"
-      name: "maven_3_9_4"
-    - home: "/opt/maven/apache-maven-3.8.8"
-      name: "maven_3_8_8"
+      - home: "/opt/maven/apache-maven-3.9.4"
+        name: "maven_3_9_4"
+      - home: "/opt/maven/apache-maven-3.8.8"
+        name: "maven_3_8_8"
   mavenGlobalConfig:
     globalSettingsProvider: "standard"
     settingsProvider: "standard"
