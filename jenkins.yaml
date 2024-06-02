@@ -61,10 +61,10 @@ jenkins:
     - "hudson.util.DoubleLaunchChecker"
     - "hudson.diagnosis.ReverseProxySetupMonitor"
   globalNodeProperties:
-  - envVars:
-      env:
-        - key: "ANDROID_SDK_ROOT"
-          value: "/mnt/sdc2/andorid-sdk2/sdk"
+    - envVars:
+        env:
+          - key: "ANDROID_SDK_ROOT"
+            value: "/mnt/sdc2/andorid-sdk2/sdk"
   labelAtoms:
     - name: "built-in"
     - name: "ubuntu-agent-prod"
