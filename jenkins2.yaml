@@ -1,0 +1,299 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - gitLabApiTokenImpl:
+          apiToken: "{AQAAABAAAABQqsiWHrjp/MluEqneispjE1Cm3aKvN5tuJSO0rnv8/JnEqhVoz4jNzwQwrpbngtzgxARXg4pgc1FAJGv48ns9F4ITqOPEMRzA3iwam0mbYFCDU0nv4siGtvYod9wpZaC5}"
+          description: "Personal Access Tokens for Gitlab Abexa ONPREMISE"
+          id: "gitlababexa-jrafael"
+          scope: GLOBAL
+      - usernamePassword:
+          description: "User for Server 17 for Agent"
+          id: "server17-username"
+          password: "{AQAAABAAAAAQBLfNCCMoQ4uyjzZJtMbuTR4nK7QezQ3Y0AzxJjlNSk0=}"
+          scope: GLOBAL
+          username: "jenkins-agent"
+      - gitLabApiTokenImpl:
+          apiToken: "{AQAAABAAAABQMlHw/PruZaubG/3HqQB8Uwnv3S3f3vAl3Amjkw5fYwUyv7CbdOLeT3QNH69Kp/L7YyHjrw4GrIFEsweW2h4s+jG7GVN/bvu+cNfgIiaeZ/RLLCmSF1PToxjjUU7lJeld}"
+          description: "Access Token for Gitlab Abexa"
+          id: "gitlab-abexaabx"
+          scope: GLOBAL
+      - usernamePassword:
+          id: "Gitlab-Username-Abexa"
+          password: "{AQAAABAAAAAgWx4zHR7i2dIa1hjYxgHldfWv+5TZhKqppO740NL5r10mLsBbu4/4UNfW0RQmlnSF}"
+          scope: GLOBAL
+          username: "abexa.abx"
+      - usernamePassword:
+          description: "Credentials for Docker Registry"
+          id: "docker_credentials_id"
+          password: "{AQAAABAAAAAQzugZyZlJL8/h4tP2OvcfamgUSIxI5S2z4o12WLLyo/Q=}"
+          scope: GLOBAL
+          username: "admin"
+      - usernamePassword:
+          description: "Usuario del servidor 16 Huandoy para jenkins"
+          id: "jenkins-agent-ubuntu-user"
+          password: "{AQAAABAAAAAQUr3bs0011OEKGCRgdphVQNtv0GWKIzRdUO5SgcOg7Xo=}"
+          scope: GLOBAL
+          username: "jenkins"
+      - usernamePassword:
+          id: "abexa_gitlab_account_kane"
+          password: "{AQAAABAAAAAQdynpBvtqiGG4dmglgZbcBbJSZS347yzcIR+e1D3I/7U=}"
+          scope: GLOBAL
+          username: "kbaltazar.abx@gmail.com"
+      - usernamePassword:
+          description: "User GitLab Abexa"
+          id: "gitlababexa_account_abexa"
+          password: "{AQAAABAAAAAQqVCX2EWgNhh6Ze7lwADMYL5IFOVpmyOZYKOjoqQXCnE=}"
+          scope: GLOBAL
+          username: "abexa"
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "hudson.util.DoubleLaunchChecker"
+  - "hudson.diagnosis.ReverseProxySetupMonitor"
+  globalNodeProperties:
+  - envVars:
+      env:
+      - key: "ANDROID_SDK_ROOT"
+        value: "/mnt/sdc2/andorid-sdk2/sdk"
+  labelAtoms:
+  - name: "built-in"
+  - name: "ubuntu-agent-prod"
+  - name: "ubuntu-dev"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  nodeMonitors:
+    diskSpace:
+      '/home/jenkins': '10000MB'  # Ajusta el valor según tus necesidades
+    temporarySpace:
+      '/tmp': '2000MB'  # Ajusta el valor según tus necesidades
+    swapSpace:
+      minimumSwapSpace: '512MB'  # Ajusta el valor según tus necesidades
+  nodes:
+  - permanent:
+      labelString: "ubuntu-agent-prod"
+      launcher:
+        ssh:
+          credentialsId: "jenkins-agent-ubuntu-user"
+          host: "serverapp01.abexacloud.com"
+          port: 10950
+          sshHostKeyVerificationStrategy:
+            manuallyTrustedKeyVerificationStrategy:
+              requireInitialManualTrust: true
+      mode: EXCLUSIVE
+      name: "ubuntu-agent-prod"
+      numExecutors: 5
+      remoteFS: "/home/jenkins"
+      retentionStrategy: "always"
+  - permanent:
+      labelString: "ubuntu-dev"
+      launcher:
+        ssh:
+          credentialsId: "server17-username"
+          host: "192.168.1.17"
+          port: 22
+          sshHostKeyVerificationStrategy:
+            manuallyTrustedKeyVerificationStrategy:
+              requireInitialManualTrust: true
+          tcpNoDelay: false
+          workDir: "/home/jenkins-agent"
+      name: "ubuntu-dev"
+      numExecutors: 5
+      remoteFS: "/home/jenkins-agent"
+      retentionStrategy: "always"
+  numExecutors: 5
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        name: "admin"
+        properties:
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "theme"
+        - "timezone"
+        - "experimentalFlags"
+        - mailer:
+            emailAddress: "jrafael.abx@gmail.com"
+        - "apiToken"
+  slaveAgentPort: 20003
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+appearance:
+  themeManager:
+    disableUserThemes: false
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  scriptApproval:
+    approvedScriptHashes:
+    - "SHA512:3f205299bef2fe3329258a42f2c60d332cc35ccb41a3ca0512d7869c6aff4561ff708c48123b4f7c3dec33ccca30d54fb8b9b51b5bc7070f96236d11a3f0bdcb"
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  enrichedSummaryConfig:
+    enrichedSummaryEnabled: false
+    httpClientDelayBetweenRetriesInSeconds: 1
+    httpClientMaxRetries: 3
+    httpClientTimeoutInSeconds: 1
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "https://jenkinsdev-service.abexa.pe/github-webhook/"
+  gitLabConnectionConfig:
+    connections:
+    - apiTokenId: "gitlababexa-jrafael"
+      clientBuilderId: "autodetect"
+      connectionTimeout: 10
+      ignoreCertificateErrors: false
+      name: "gitlababexa-connect"
+      readTimeout: 10
+      url: "https://gitlab.abexa.pe/"
+    - apiTokenId: "gitlab-abexaabx"
+      clientBuilderId: "autodetect"
+      connectionTimeout: 10
+      ignoreCertificateErrors: false
+      name: "Gitlab Abexa Account"
+      readTimeout: 10
+      url: "https://gitlab.com/"
+    useAuthenticatedEndpoint: true
+  globalLibraries:
+    libraries:
+    - defaultVersion: "master"
+      name: "JenkinsSharedLibraryOfficial"
+      retriever:
+        modernSCM:
+          libraryPath: "./"
+          scm:
+            git:
+              credentialsId: "Gitlab-Username-Abexa"
+              id: "cc269c2c-e2fa-40ee-845e-803397ce328e"
+              remote: "https://gitlab.com/abexa-api/jenkins-shared-library-api.git"
+              traits:
+              - "gitBranchDiscovery"
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  injectionConfig:
+    allowUntrusted: false
+    checkForBuildAgentErrors: false
+    enabled: false
+    enforceUrl: false
+    injectCcudExtension: false
+    injectMavenExtension: false
+  junitTestResultStorage:
+    storage: "file"
+  locale:
+    ignoreAcceptLanguage: true
+    systemLocale: "ENGLISH"
+  location:
+    adminAddress: "kbaltazar.abx@gmail.com"
+    url: "http://192.168.64.2:20002/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  prismConfiguration:
+    theme: PRISM
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  gradle:
+    installations:
+    - home: "/opt/gradle/gradle-7.2"
+      name: "gradle_7_2"
+  jdk:
+    installations:
+    - home: "/usr/lib/jvm/java-1.8.0-openjdk-amd64"
+      name: "jdk_1_8_0"
+    - home: "/usr/lib/jvm/java-1.11.0-openjdk-amd64"
+      name: "jdk_1_11_0"
+    - home: "/usr/lib/jvm/java-1.17.0-openjdk-amd64"
+      name: "jdk_1_17_0"
+  maven:
+    installations:
+    - home: "/opt/maven/apache-maven-3.9.4"
+      name: "maven_3_9_4"
+    - home: "/opt/maven/apache-maven-3.8.8"
+      name: "maven_3_8_8"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
